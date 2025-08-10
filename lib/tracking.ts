@@ -60,3 +60,6 @@ export function buildWhatsAppUrl({ phone, message }: { phone: string; message: s
   }
   return url
 }
+export const trackEvent = (eventName: string, params?: Record<string, any>) => {
+  (window as any).gtag?.('event', eventName, params);
+};
